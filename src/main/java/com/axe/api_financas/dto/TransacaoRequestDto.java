@@ -9,7 +9,9 @@ public record TransacaoRequestDto(
     String descricao,
     BigDecimal valor,
     LocalDate data,
-    TipoTransacao tipo
+    String categoria,
+    TipoTransacao tipo,
+    Long usuarioId
 ) {
     
 }
