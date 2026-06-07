@@ -24,6 +24,7 @@ public class Transacao {
     private String descricao;
     private BigDecimal valor;
     private LocalDate data;
+    private String categoria;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -36,11 +37,12 @@ public class Transacao {
     public Transacao() {
     }
 
-    public Transacao(Long id, String descricao, BigDecimal valor, LocalDate data, TipoTransacao tipo, Usuario usuario) {
+    public Transacao(Long id, String descricao, BigDecimal valor, LocalDate data, String categoria, TipoTransacao tipo, Usuario usuario) {
         this.id = id;
         this.descricao = descricao;
         this.valor = valor;
         this.data = data;
+        this.categoria = categoria;
         this.tipo = tipo;
         this.usuario = usuario;
     }
@@ -89,6 +91,14 @@ public class Transacao {
         this.usuario = usuario;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -116,7 +126,7 @@ public class Transacao {
 
     @Override
     public String toString() {
-        return "Transacao [id=" + id + ", descricao=" + descricao + ", valor=" + valor + ", data=" + data + ", tipo="
+        return "Transacao [id=" + id + ", descricao=" + descricao + ", valor=" + valor + ", data=" + data + ", categoria=" + categoria + ", tipo="
                 + tipo + ", usuario=" + usuario + "]";
     }
 
